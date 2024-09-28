@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "minify-images": "imagemin src/components/*/assets/* --out-dir=dist/components",
+    "start": "npm run minify-images  && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -12,6 +13,10 @@
   "dependencies": {
     "@fontsource-variable/jost": "^5.1.0",
     "@fontsource/barlow": "^5.1.0",
-    "astro": "^4.15.9"
+    "astro": "^4.15.9",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "imagemin-cli": "^8.0.0"
   }
 }

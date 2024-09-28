@@ -9,14 +9,27 @@
         <div class="services-inner__discription">
             <div class="services-inner_discription-anchor anchor">
                 <span class="anchor__line-span">—</span>
-                <span class="anchor__text-span"> Latest Services</span>
+                <span class="anchor__text-span">Latest Services</span>
             </div>
             <h2 class="services-inner_discription-h2">The Best Services For You.</h2>
             <span class="services-inner_discription-text">In today's world, we're bombarded with choices. From streaming services to meal kits, it can be overwhelming to find the best option.</span>
-            <button class="services-inner_discription-button button button--transparent">See All <img src="assets/arrow-right.png" alt="arrow image" class="services-inner_discription-button-arrow"></button>
+            <button class="services-inner_discription-button button button--transparent">See All <svg class="services-inner_discription-button-svg">
+                <use href="/dist/svg/sprite.css.svg#narrow-up"></use>
+              </svg>
+            </button>
             <img src="assets/engineer.png" alt="engineerpicture" class="services-inner_discription-img">
         </div>
-        <div class="services-inner__slider"></div>
+        <div class="services-inner__slider swiper-container">
+            <div class="services-inner__swiper-wrapper">
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                    <div></div>
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>
@@ -47,6 +60,7 @@
         font-size: 14px;
         font-weight: bold;
         color: #FB5B11;
+        margin-right: 0.6rem;
     }
 
     .anchor__text-span {
@@ -60,6 +74,7 @@
         font-size: 3.25rem;
         width: 26rem;
         font-family: "Jost Variable", sans-serif;
+        margin: 1rem 0;
     }
 
     .services-inner_discription-text {
@@ -68,10 +83,11 @@
         font-weight: 400;
         display: inline-block;
         width: 27.3rem;
+        margin-bottom: 2rem;
     }
 
     .button {
-        padding: 1rem 2rem;
+        padding: 0.8rem 1.2rem;
         text-align: center;
     }
 
@@ -80,14 +96,18 @@
     }
 
     .services-inner_discription-button  {
-        width: 9.125rem;
+        width: 9.325rem;
         font-weight: 600;
         font-family: "Jost Variable", sans-serif;
     }
 
-    .services-inner_discription-button-arrow {
+
+    .services-inner_discription-button-svg {
         height: 1.3rem;
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
+        width: 1.5rem;
+        position: relative;
+        top: 3px;
     }
 
     .services-inner_discription-img {

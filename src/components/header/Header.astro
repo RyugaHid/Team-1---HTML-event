@@ -1,6 +1,131 @@
 ---
-
+const links = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
+];
+const socials = [
+  { name: "Instagram", href: "http://instagram.com", svg: "#ig-icon" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
+];
 ---
 
-<h1>Header</h1>
-<img src="./assets/download.jfif" alt="" />
+<header class="header">
+  <div class="header__wrapper">
+    <a href="/" class="header__logo logo">
+      <img class="logo__img" src="/assets/logo.png" alt="logo" />
+      <div class="logo__text">
+        <span class="logo__text-top">construction Building</span>
+        <span class="logo__text-bottom">conbuild</span>
+      </div>
+    </a>
+    <div class="header__main">
+      <div class="header__contacts">
+        <span class="header__address">2464 Royal Ln. Mesa, New York</span>
+        <a class="header__mail" href="mailto: info@golzergmail.com"
+          >info@golzergmail.com</a
+        >
+        <a class="header__hours">Mon - Sat 8:00 - 18:20</a>
+        <ul class="header__socials socials">
+          {
+            socials.map((social) => (
+              <li class="socials__item">
+                <a href={social.href} class="socials__link">
+                  {social.svg}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="header__nav nav">
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} class="nav__link">
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="header__phone phone">
+      <a href="tel: +1(704) 555-0127" class="phone__icon">
+        <svg></svg>
+      </a>
+      <div class="phone__wrapper">
+        <span class="phone__text">Call us any time</span>
+        <a href="tel: +1(704) 555-0127" class="phone__link"> (704) 555-0127 </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: #0e0e0e;
+    color: #fff;
+    padding-right: 100px;
+    font-family: Jost, Arial, sans-serif;
+  }
+
+  .header__wrapper {
+    display: flex;
+  }
+
+  .header__logo {
+    width: 30%;
+  }
+
+  .logo {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% + 11px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url("assets/logo-bg.png");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  .logo__img {
+    width: 86px;
+    height: auto;
+    position: relative;
+  }
+
+  .logo__text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .logo__text-top {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: Barlow, Arial, sans-serif;
+  }
+
+  .logo__text-bottom {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+</style>

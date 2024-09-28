@@ -1,15 +1,15 @@
 ---
 const links = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "/", active: true },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
 ];
 const socials = [
-  { name: "Instagram", href: "http://instagram.com", svg: "#ig-icon" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "Facebook", href: "http://facebook.com", svgId: "#facebook" },
+  { name: "Instagram", href: "http://instagram.com", svgId: "#instagram" },
+  { name: "X", href: "https://x.com", svgId: "#x" },
+  { name: "LinkedIn", href: "https://linkedin.com", svgIf: "#linkedIn" },
 ];
 ---
 
@@ -23,40 +23,53 @@ const socials = [
       </div>
     </a>
     <div class="header__main">
-      <div class="header__contacts">
-        <span class="header__address">2464 Royal Ln. Mesa, New York</span>
-        <a class="header__mail" href="mailto: info@golzergmail.com"
-          >info@golzergmail.com</a
-        >
-        <a class="header__hours">Mon - Sat 8:00 - 18:20</a>
+      <ul class="header__contacts contacts">
+        <li class="contacts__item contacts__item--address">
+          <svg class="contacts__icon contacts__icon--address" id="address"
+          ></svg>
+          2464 Royal Ln. Mesa, New York
+        </li>
+        <li class="contacts__item contacts__item--mail">
+          <a class="contacts__link" href="mailto: info@golzergmail.com">
+            <svg class="contacts__icon"></svg>
+            info@golzergmail.com</a
+          >
+        </li>
+        <li class="contacts__item">
+          <svg class="contacts__icon"></svg>
+          Mon - Sat 8:00 - 18:20
+        </li>
         <ul class="header__socials socials">
           {
             socials.map((social) => (
               <li class="socials__item">
                 <a href={social.href} class="socials__link">
-                  {social.svg}
+                  <svg class="socials__icon" id={social.svgId} />
                 </a>
               </li>
             ))
           }
         </ul>
-      </div>
-      <div class="header__nav nav">
+      </ul>
+      <ul class="header__nav nav">
         {
-          links.map((link) => (
-            <li>
-              <a href={link.href} class="nav__link">
-                {link.name}
+          links.map((navLink) => (
+            <li class="nav__item">
+              <a
+                href={navLink.href}
+                class={`nav__link ${navLink.active ? "active" : ""}`}
+              >
+                {navLink.name}
               </a>
             </li>
           ))
         }
-      </div>
+      </ul>
     </div>
 
     <div class="header__phone phone">
-      <a href="tel: +1(704) 555-0127" class="phone__icon">
-        <svg></svg>
+      <a href="tel: +1(704) 555-0127" class="phone__btn">
+        <svg class="phone__icon" id="#phone"></svg>
       </a>
       <div class="phone__wrapper">
         <span class="phone__text">Call us any time</span>
@@ -128,4 +141,142 @@ const socials = [
     line-height: 32px;
     font-weight: 600;
   }
+
+  .contacts {
+    margin: 0;
+    padding: 16px 25px 17px 60px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  .contacts__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contacts__item--address {
+    margin-right: 42px;
+  }
+
+  .contacts__item--mail {
+    margin-right: 62px;
+  }
+
+  .contacts__icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .contacts__icon--address {
+    width: 8px;
+  }
+
+  .contacts__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .header__socials {
+    margin-left: auto;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .socials__item {
+    width: 20px;
+    height: 20px;
+  }
+
+  .socials__link {
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Barlow, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__link {
+    color: inherit;
+    text-decoration: none;
+    padding: 30px 0;
+    transition: 0.3s ease;
+  }
+
+  .nav__link.active,
+  .nav__link:hover,
+  .nav__link:active,
+  .nav__link:focus {
+    color: #fb5b11;
+    border-bottom: 4px solid #fb5b11;
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    padding-left: 23px;
+    gap: 14px;
+  }
+
+  .phone__btn {
+    display: flex;
+    border: none;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fb5b11;
+  }
+
+  .phone__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .phone__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone__text {
+    color: #cdcdcd;
+    font-family: Barlow, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .phone__link {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* .header a {
+    transition: color 0.3s ease;
+  }
+
+  .header a:hover {
+    color: #fb5b11;
+  } */
 </style>

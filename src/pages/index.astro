@@ -1,10 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header/Header.astro";
+
+const navLinks = [
+  { name: "Home", href: "#", active: true },
+  { name: "About", href: "#about", active: false },
+  { name: "Projects", href: "#projects", active: false },
+  { name: "Testimonials", href: "#testimonials", active: false },
+  { name: "Team", href: "#team", active: false },
+  { name: "Pricing", href: "#pricing", active: false },
+  { name: "Block", href: "#block", active: false },
+  { name: "Contact", href: "#contact", active: false },
+];
 ---
 
 <Layout>
-  <Header />
+  <Header navLinks={navLinks} />
 </Layout>
 
 <style>

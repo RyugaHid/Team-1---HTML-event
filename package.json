@@ -15,7 +15,8 @@
     "@fontsource-variable/jost": "^5.1.0",
     "@fontsource/barlow": "^5.1.0",
     "astro": "^4.15.9",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "imagemin-cli": "^8.0.0",

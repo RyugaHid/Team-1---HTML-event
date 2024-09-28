@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header/Header.astro";
+import Top from "../components/top/Top.astro";
 
 const navLinks = [
   { name: "Home", href: "#", active: true },
@@ -16,6 +17,7 @@ const navLinks = [
 
 <Layout>
   <Header navLinks={navLinks} />
+  <Top/>
 </Layout>
 
 <style>

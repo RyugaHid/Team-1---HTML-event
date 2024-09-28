@@ -1,0 +1,65 @@
+---
+const cases = [
+  {
+    name: "Tower Construction",
+    picName: "case-tower.jpg",
+    tag: "construction",
+  },
+  {
+    name: "Bridge Reconstruction",
+    picName: "case-bridge.jpg",
+    tag: "reconstruction",
+  },
+  { name: "Library Design", picName: "case-library.jpg", tag: "planning" },
+  {
+    name: "Museum Renovation",
+    picName: "case-museum.jpg",
+    tag: "renovation",
+  },
+  {
+    name: "Stadium Expansion",
+    picName: "case-stadium.jpg",
+    tag: "expansion",
+  },
+];
+
+const processSteps = [
+  {
+    name: "Planning and Design",
+    mediaUrl: "",
+    description:
+      "This stage involves defining key project parameters, developing architectural and engineering solutions. It includes data collection, site analysis, material selection, and the creation of detailed drawings and cost estimates. This phase lays the groundwork for all subsequent work.",
+  },
+
+  {
+    name: "Permitting and Approvals",
+    mediaUrl: "",
+    description:
+      "After the design phase, obtaining permits and approvals from regulatory bodies is essential. This includes verifying compliance with building codes and regulations, acquiring construction permits, and other necessary documents to ensure the project is legally sound",
+  },
+
+  {
+    name: "Foundation Construction",
+    mediaUrl: "",
+    description:
+      "This stage marks the beginning of the actual construction process with the foundation work. It involves site preparation, excavation, formwork installation, and concrete pouring. A well-constructed foundation is crucial for the building’s stability and longevity.",
+  },
+];
+---
+
+<section class="projects">
+  <div class="projects__wrapper">
+    <h2 class="projects__title">Our Projects</h2>
+    <h3 class="projects__subtitle">Trusted & Reliable</h3>
+    <div class="projects__slider"></div>
+  </div>
+  <div class="projects__wrapper">
+    <h2 class="projects__title">How To Process</h2>
+    <h3 class="projects__subtitle">Steps in the Construction Process</h3>
+    <ol class="projects__list process">
+      <li class="process__item">
+        <span>01. Planning and Design</span>
+      </li>
+    </ol>
+  </div>
+</section>

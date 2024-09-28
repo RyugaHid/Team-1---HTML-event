@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "minify-images": "imagemin src/components/*/assets/* --out-dir=dist/components",
+    "minify-images": "imagemin public/assets/* --out-dir=dist/components",
     "start": "npm run minify-images  && astro dev",
     "build": "astro build",
     "preview": "astro preview",

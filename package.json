@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "build-sprite": "svg-sprite -s --symbol-dest dist public/assets/icons/*.svg",
     "minify-images": "imagemin public/assets/* --out-dir=dist/components",
-    "start": "npm run minify-images  && astro dev",
+    "start": "npm run build-sprite && npm run minify-images && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,6 +18,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "imagemin-cli": "^8.0.0"
+    "imagemin-cli": "^8.0.0",
+    "svg-sprite": "^2.0.4"
   }
 }

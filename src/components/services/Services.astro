@@ -7,11 +7,14 @@
     <img src='assets/hook.png' alt="hook" class="services__img">
     <div class="services-inner">
         <div class="services-inner__discription">
-            <span class="services-inner_discription-anchor">Latest Services</span>
+            <div class="services-inner_discription-anchor anchor">
+                <span class="anchor__line-span">—</span>
+                <span class="anchor__text-span"> Latest Services</span>
+            </div>
             <h2 class="services-inner_discription-h2">The Best Services For You.</h2>
             <span class="services-inner_discription-text">In today's world, we're bombarded with choices. From streaming services to meal kits, it can be overwhelming to find the best option.</span>
-            <button class="services-inner_discription-button">See All</button>
-            <img src="" alt="" class="services-inner_discription-img">
+            <button class="services-inner_discription-button button button--transparent">See All <img src="assets/arrow-right.png" alt="arrow image" class="services-inner_discription-button-arrow"></button>
+            <img src="assets/engineer.png" alt="engineerpicture" class="services-inner_discription-img">
         </div>
         <div class="services-inner__slider"></div>
     </div>
@@ -23,9 +26,75 @@
 
     .services {
         width: 100%;
+        height: 53rem;
     }
     .services__img {
-        height: 10rem;
+        height: 15rem;
+    }
+
+    .services-inner {
+        width: 81rem;
+        margin: auto;
+    }
+
+    .services-inner__discription {
+        display: flex;
+        flex-direction: column;
+        width: 32.5rem;
+    }
+
+    .anchor__line-span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #FB5B11;
+    }
+
+    .anchor__text-span {
+        font-family: "Jost Variable", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .services-inner_discription-h2{
+        font-weight: 600;
+        font-size: 3.25rem;
+        width: 26rem;
+        font-family: "Jost Variable", sans-serif;
+    }
+
+    .services-inner_discription-text {
+        font-family: "Barlow", sans-serif;
+        color: #555555;
+        font-weight: 400;
+        display: inline-block;
+        width: 27.3rem;
+    }
+
+    .button {
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+    .button--transparent {
+        background-color: transparent;
+    }
+
+    .services-inner_discription-button  {
+        width: 9.125rem;
+        font-weight: 600;
+        font-family: "Jost Variable", sans-serif;
+    }
+
+    .services-inner_discription-button-arrow {
+        height: 1.3rem;
+        transform: rotate(-45deg);
+    }
+
+    .services-inner_discription-img {
+        height: 4.5rem;
+        width: 4.5rem;
+        opacity: 0.2;
+        align-self: flex-end;
     }
 </style>
 

@@ -1,6 +1,396 @@
 ---
-
+const socials = [
+  { name: "facebook", href: "http://facebook.com" },
+  {
+    name: "instagram",
+    href: "http://instagram.com",
+  },
+  { name: "twitter", href: "https://x.com" },
+  { name: "linkedin", href: "https://linkedin.com" },
+];
+const navLinks = Astro.props.navLinks;
 ---
 
-<h1>Header</h1>
-<img src="./assets/download.jfif" alt="" />
+<header class="header">
+  <div class="header__wrapper">
+    <a href="/" class="header__logo logo">
+      <img class="logo__img" src="/assets/logo.png" alt="logo" />
+      <div class="logo__text">
+        <span class="logo__text-top">construction Building</span>
+        <span class="logo__text-bottom">conbuild</span>
+      </div>
+    </a>
+    <div class="header__main">
+      <ul class="header__contacts contacts">
+        <li class="contacts__item contacts__item--address">
+          <svg class="contacts__icon contacts__icon--address">
+            <use href="/dist/svg/sprite.css.svg#address"></use></svg
+          >
+          2464 Royal Ln. Mesa, New York
+        </li>
+        <li class="contacts__item contacts__item--mail">
+          <a class="contacts__link" href="mailto: info@golzergmail.com">
+            <svg class="contacts__icon">
+              <use href="/dist/svg/sprite.css.svg#mail"></use>
+            </svg>
+            info@golzergmail.com</a
+          >
+        </li>
+        <li class="contacts__item">
+          <svg class="contacts__icon">
+            <use href="/dist/svg/sprite.css.svg#hours"></use>
+          </svg>
+          Mon - Sat 8:00 - 18:20
+        </li>
+        <li class="contacts__item contacts__item--socials">
+          <ul class="socials">
+            {
+              socials.map((social) => (
+                <li class="socials__item">
+                  <a href={social.href} class="socials__link">
+                    <img
+                      src={`/assets/${social.name}.png`}
+                      class="socials__icon"
+                    />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </li>
+      </ul>
+      <ul class="header__nav nav">
+        {
+          navLinks.map((navLink) => (
+            <li class="nav__item">
+              <a
+                href={navLink.href}
+                class={`nav__link ${navLink.active ? "active" : ""}`}
+              >
+                {navLink.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="header__phone phone">
+      <a href="tel: +1(704) 555-0127" class="phone__btn">
+        <svg class="phone__icon">
+          <use href="/dist/svg/sprite.css.svg#phone"></use>
+        </svg>
+      </a>
+      <div class="phone__wrapper">
+        <span class="phone__text">Call us any time</span>
+        <a href="tel: +1(704) 555-0127" class="phone__link"> (704) 555-0127 </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: #0e0e0e;
+    color: #fff;
+    padding-right: 100px;
+    font-family: Jost, Arial, sans-serif;
+  }
+
+  .header__wrapper {
+    display: flex;
+  }
+
+  .header__logo {
+    width: 30%;
+  }
+
+  .logo {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 280px;
+  }
+
+  .logo::before {
+    content: "";
+    display: block;
+    width: calc(100% + 20px);
+    height: calc(100% + 11px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url("assets/logo-bg.png");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  .logo__img {
+    width: 86px;
+    height: auto;
+    position: relative;
+  }
+
+  .logo__text {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .logo__text-top {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: Barlow, Arial, sans-serif;
+  }
+
+  .logo__text-bottom {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+
+  .contacts {
+    margin: 0;
+    padding: 16px 25px 17px 60px;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    gap: 20px 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header__main {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+  }
+
+  .contacts__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: nowrap;
+    color: #cdcdcd;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .contacts__item--socials {
+    margin-left: auto;
+  }
+
+  .contacts__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: nowrap;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .contacts__link:hover,
+  .contacts__link:active,
+  .contacts__link:focus {
+    color: #fb5b11;
+  }
+
+  .contacts__icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .contacts__icon--address {
+    width: 8px;
+    height: 16px;
+  }
+
+  .header__socials {
+    margin-left: auto;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .socials__item {
+    width: 20px;
+    height: 20px;
+  }
+
+  .socials__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .socials__icon {
+    width: auto;
+    height: 10px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  .socials__icon:hover,
+  .socials__icon:focus,
+  .socials__icon:active {
+    opacity: 1;
+  }
+
+  .nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Barlow, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 60px;
+  }
+
+  .nav__link {
+    color: inherit;
+    text-decoration: none;
+    padding: 30px 0;
+    transition: 0.3s ease;
+    display: block;
+    position: relative;
+    transition: 0.3s ease;
+  }
+
+  .nav__link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: 4px solid transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease;
+  }
+
+  .nav__link.active,
+  .nav__link:hover,
+  .nav__link:focus,
+  .nav__link:active {
+    color: #fb5b11;
+  }
+
+  .nav__link.active::after,
+  .nav__link:hover::after,
+  .nav__link:focus::after,
+  .nav__link:active::after {
+    background-color: #fb5b11;
+  }
+
+  .phone {
+    display: flex;
+    align-items: center;
+    padding-left: 23px;
+    gap: 14px;
+  }
+
+  .phone__btn {
+    display: flex;
+    border: none;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fb5b11;
+    transition: 0.3s ease;
+  }
+
+  .phone__btn:focus,
+  .phone__btn:active,
+  .phone__btn:hover {
+    background-color: rgba(251, 91, 17, 0.7);
+  }
+
+  .phone__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .phone__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 115px;
+  }
+
+  .phone__text {
+    color: #cdcdcd;
+    font-family: Barlow, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .phone__link {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+  }
+
+  .phone__link:hover,
+  .phone__link:focus,
+  .phone__link:active {
+    color: #fb5b11;
+  }
+
+  .header__phone {
+    margin-left: auto;
+  }
+
+  @media (max-width: 1440px) {
+    .header {
+      padding-right: 0;
+    }
+
+    .phone {
+      display: none;
+    }
+
+    .contacts {
+      padding-left: 20px;
+      gap: 10px;
+    }
+
+    .nav {
+      padding-left: 20px;
+    }
+
+    .socials {
+      gap: 10px;
+    }
+  }
+</style>
+
+<script>
+  const navLinks = document.querySelectorAll(".nav__link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+</script>

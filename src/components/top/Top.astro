@@ -27,6 +27,7 @@
     display: flex;
     justify-content: center;
     background: linear-gradient(180deg, rgba(14, 14, 14, 0.6) 0%, rgba(14, 14, 14, 0.9) 100%);
+    z-index: -1;
 }
 
 .top__left{
@@ -52,7 +53,7 @@
 
   .top__text{
     margin: 0;
-    font-family: "Barlow", sans-serif;;
+    font-family: "Barlow", sans-serif;
     color: #D8D8D8;
     font-size: 24px;
     font-weight: 400;
@@ -63,15 +64,18 @@
   .btn--more{
     padding: 17px 35px;
     background-color: #fb5b11;
+    font-family: "Barlow", sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     color: #fff;
-    cursor: pointer;
+     cursor: pointer;
     transition: 0.7s;
   }
+
   .btn--more:hover{
     background-color: #ff8742;
   }
+
   .top__right{
     position: relative;
     margin-left: 74px;

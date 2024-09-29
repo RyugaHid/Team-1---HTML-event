@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/header/Header.astro";
 import Top from "../components/top/Top.astro";
 import Services from "../components/services/Services.astro";
+import Testemonials from "../components/testemonials/Testemonials.astro";
 
 const navLinks = [
   { name: "Home", href: "#", active: true },
@@ -20,6 +21,7 @@ const navLinks = [
   <Header navLinks={navLinks} />
   <Top/>
   <Services />
+  <Testemonials />
 </Layout>
 
 <style>

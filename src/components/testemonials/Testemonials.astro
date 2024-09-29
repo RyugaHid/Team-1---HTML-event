@@ -1,0 +1,239 @@
+
+<section class="testemonials">
+    <img class="scheme" src="/assets/scheme.png" alt="" >
+    <div class="testemonials__container">
+    <div class="testemonials__wrapper">
+    <div class="testemonials__subtitle">Our Testimonials</div>
+    <h2 class="testemonials__title">What our Clients Say About Our Work.</h2>
+    </div>
+
+    <div class="tabs">
+        <tabs-quote class="tabs">
+        <div class="tabs__quotes">
+           <div class="quote">
+            <div class="quote__text">Working with consik a fantastic experience. They truly understoodour vision and turned our dream home into a reality. The attention to detail and dedication were The team.</div>
+            <div class="quote__wrapper">
+            <img class="quote__img" src="/assets/quote.png" alt="quote__img">
+            <div class="quote__person">
+                <span class="quote__person-name">Brooklyn Simmons</span>
+                <span class="quote__person-prof">Architect Designer</span>
+            </div>
+            </div>
+           </div>
+        </div>
+        <div class="tabs__control">
+            <img class="control__line" src="/assets/quote-line.png" alt="quote-line">
+            <div class="buttons">
+                <button class="btn btn--change testemonials__btn--active" id="2321">
+                <img class="btn__img" src="/assets/manPhoto.jpg" alt="quote-wrapper" id="2321" >
+                </button>
+                <button class="btn btn--change" id="534643">
+                <img class="btn__img" src="/assets/woman1Photo.jpg" alt="quote-wrapper" id="534643" onclick="">
+                </button>
+                <button class="btn btn--change" id="67845534">
+                <img class="btn__img" src="/assets/woman2Photo.jpg" alt="quote-wrapper" id="67845534" onclick="">
+                </button>
+            </div>
+        </div>
+        </tabs-quote>
+    </div>
+</div>
+</div>
+</section>
+
+<script>
+class Tabs extends HTMLElement {
+    constructor() {
+      super();
+
+      const buttons = document.querySelectorAll('.btn');
+      const text = this.querySelector('.quote__text');
+      const name = this.querySelector('.quote__person-name');
+      const prof = this.querySelector('.quote__person-prof');
+
+       buttons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            generateData(event.target.id);
+            });
+        });
+
+        function generateData(id) {
+           const CurrentData = tabsData.find((data)=>{
+            if (data.id === id ) {
+               return true;
+            }
+           })
+           text.textContent = CurrentData.quote.toString();  
+           name.textContent = CurrentData.person.toString();  
+           prof.textContent = CurrentData.pfor.toString(); 
+
+            buttons.forEach((button) => {
+            const target = button as HTMLElement;
+            if (id === button.id) {
+                target.classList.add('testemonials__btn--active');
+            }
+            if (id != button.id) {
+               target.classList.remove('testemonials__btn--active'); 
+            }
+        }); 
+        }
+
+        const tabsData = [
+        {
+        id: "2321", 
+        person: "Brooklyn Simmons", 
+        pfor:"Architect Designer", 
+        quote:"Working with consik a fantastic experience. They truly understoodour vision and turned our dream home into a reality. The attention to detail and dedication were The team.",
+        image: "/public/assets/manPhoto.jpg",
+        active:true,
+        },
+        {
+        id: "534643", 
+        person: "Olivia Johnson", 
+        pfor:"Project Manager", 
+        quote:"Working with Everlast Construction was an incredible journey. They captured our ideas perfectly and transformed our space beyond our expectations. Their commitment to quality and craftsmanship is truly commendable.",
+        image: "/public/assets/woman1Photo.jpg",
+        active:false,
+        },
+        {
+        id: "67845534", 
+        person: "Emma Thompson", 
+        pfor:"Construction Coordinator", 
+        quote:"Collaborating with Urban Developments was a delight. They understood our requirements and executed our project with precision. Their attention to detail and passion for their work really stood out.",
+        image: "/public/assets/woman2Photo.jpg",
+        active:false,
+        },
+        ];
+    }
+  }
+
+  customElements.define('tabs-quote', Tabs);
+</script>
+
+
+<style>
+.testemonials{
+    display: flex;
+    margin-bottom: 1000px;
+}
+
+.testemonials__wrapper{
+    max-width: 666px;
+}
+
+.testemonials__subtitle {
+    position: relative;
+    font-family: "Jost Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+.testemonials__subtitle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px; 
+    width: 15px;
+    height: 2px;
+    background-color: #FB5B11;
+    transform: translateY(-50%);
+}
+
+.testemonials__title {
+    font-family: "Jost Variable", sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+
+.testemonials__container{
+    margin-top: 144px;
+    margin-left: 26px;
+    padding-right: 322px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs{
+    display: flex;
+}
+
+.tabs__quotes{
+    margin-right: 126px;
+    margin-top: 60px;
+}
+
+.quote__text{
+  font-family: "Jost Variable", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.quote__wrapper{
+    margin-top: 40px;
+    display: flex;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 44px;
+}
+
+.quote__person{
+    display: flex;
+    flex-direction: column;
+    margin-left: 37px;
+}
+
+.quote__person-name{
+    font-family: "Jost Variable", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.quote__person-prof{
+   font-family: "Jost Variable", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #555555; 
+}
+
+.tabs__control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    margin-left: 69px;
+    text-align: center;
+}
+
+.btn--change{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn__img{
+position: absolute;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+object-fit:cover; 
+}
+
+.testemonials__btn--active{
+   width: 110px;
+    height: 110px;
+    border: 2px solid #FB5B11;
+}
+
+</style>

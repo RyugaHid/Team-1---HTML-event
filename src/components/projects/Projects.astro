@@ -95,7 +95,10 @@ const processSteps = [
         <ol class="process__list">
           {
             processSteps.map((step, i) => (
-              <li class="process__item" id={`step-${i + 1}`}>
+              <li
+                class={`process__item ${i === 1 ? "active" : ""}`}
+                id={`step-${i + 1}`}
+              >
                 0{i + 1}. {step.name}
               </li>
             ))
@@ -104,7 +107,10 @@ const processSteps = [
         <ol class="process__video-list">
           {
             processSteps.map((step, i) => (
-              <li class="process__video-item" id={`video-${i + 1}`}>
+              <li
+                class={`process__video-item ${i === 1 ? "active" : ""}`}
+                id={`video-${i + 1}`}
+              >
                 <video
                   class="process__video"
                   src={`/assets/${step.mediaUrl}`}

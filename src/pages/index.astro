@@ -5,6 +5,7 @@ import Top from "../components/top/Top.astro";
 import Services from "../components/services/Services.astro";
 import Testemonials from "../components/testemonials/Testemonials.astro";
 import Team from "../components/members/Team.astro";
+import Projects from "../components/projects/Projects.astro";
 
 const navLinks = [
   { name: "Home", href: "#", active: true },
@@ -20,18 +21,9 @@ const navLinks = [
 
 <Layout>
   <Header navLinks={navLinks} />
-  <Top/>
+  <Top />
   <Services />
+  <Projects />
   <Testemonials />
   <Team />
 </Layout>
-
-<style>
-  h1 {
-    font-family: "Jost Variable", sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-</style>

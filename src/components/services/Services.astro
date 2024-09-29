@@ -13,10 +13,10 @@ import 'swiper/css';
             </div>
             <h2 class="services-inner__discription-h2">The Best Services For You.</h2>
             <span class="services-inner__discription-text">In today's world, we're bombarded with choices. From streaming services to meal kits, it can be overwhelming to find the best option.</span>
-            <button class="services-inner__discription-button button button--transparent">See All <svg class="services-inner__discription-button-svg">
+            <a class="services-inner__discription-link link link--transparent">See All <svg class="services-inner__discription-link-svg">
                 <use href="/dist/svg/sprite.css.svg#narrow-up"></use>
               </svg>
-            </button>
+            </a>
             <img src="assets/engineer.png" alt="engineerpicture" class="services-inner__discription-img">
         </div>
         <div class="swiper services-inner__swiper">
@@ -93,8 +93,9 @@ import 'swiper/css';
         margin-bottom: 2rem;
     }
 
-    .button {
+    .link {
         padding: 1rem 0.8rem;
+        border: 1px solid black;
         text-align: center;
         display: flex;
         flex-direction: row;
@@ -102,11 +103,11 @@ import 'swiper/css';
         justify-content: center;
     }
 
-    .button--transparent {
+    .link--transparent {
         background-color: transparent;
     }
 
-    .services-inner__discription-button  {
+    .services-inner__discription-link  {
         width: 9.325rem;
         font-weight: 600;
         font-family: "Jost Variable", sans-serif;
@@ -114,7 +115,7 @@ import 'swiper/css';
     }
 
 
-    .services-inner__discription-button-svg {
+    .services-inner__discription-link-svg {
         height: 1.5rem;
         transform: rotate(45deg);
         width: 1.5rem;

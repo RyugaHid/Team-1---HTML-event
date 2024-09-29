@@ -1,0 +1,227 @@
+---
+import 'swiper/css';
+
+---
+
+<div class="services">
+    <img src='assets/hook.png' alt="hook" class="services__img">
+    <div class="services-inner">
+        <div class="services-inner__discription">
+            <div class="services-inner_discription-anchor anchor">
+                <span class="anchor__line-span">—</span>
+                <span class="anchor__text-span">Latest Services</span>
+            </div>
+            <h2 class="services-inner__discription-h2">The Best Services For You.</h2>
+            <span class="services-inner__discription-text">In today's world, we're bombarded with choices. From streaming services to meal kits, it can be overwhelming to find the best option.</span>
+            <a class="services-inner__discription-link link link--transparent">See All <svg class="services-inner__discription-link-svg">
+                <use href="/dist/svg/sprite.css.svg#narrow-up"></use>
+              </svg>
+            </a>
+            <img src="assets/engineer.png" alt="engineerpicture" class="services-inner__discription-img">
+        </div>
+        <div class="swiper services-inner__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/slide1.jpg" class="swiper-slide__img" alt="firstSlide">
+            </div>
+              <div class="swiper-slide">
+                <img src="assets/slide3.jpg" class="swiper-slide__img swiper-slide__img--centered " alt="secondSlide">
+                <img src="assets/buildings.png" class="swiper-slide__img-icon" alt="icon">
+                <div class="swiper-slide__text-block">
+                    <span class="swiper-slide__text-block-big">Building Contraction</span>
+                    <span class="swiper-slide__text-block-small">This involves various stages like planning and design.</span>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/slide2.jpg" class="swiper-slide__img" alt="thirdSlide">
+            </div>
+    </div>
+    
+</div>
+
+<style>
+
+    .services {
+        width: 100%;
+        height: 53rem;
+    }
+    .services__img {
+        height: 15rem;
+        margin-left: 5rem;
+    }
+
+    .services-inner {
+        width: 81rem;
+        margin: auto;
+        display: flex;
+        gap: 6rem;
+    }
+
+    .services-inner__discription {
+        display: flex;
+        flex-direction: column;
+        width: 32.5rem;
+    }
+
+    .anchor__line-span {
+        font-size: 14px;
+        font-weight: bold;
+        color: #FB5B11;
+        margin-right: 0.6rem;
+    }
+
+    .anchor__text-span {
+        font-family: "Jost Variable", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .services-inner__discription-h2{
+        font-weight: 600;
+        font-size: 3.25rem;
+        width: 26rem;
+        font-family: "Jost Variable", sans-serif;
+        margin: 1rem 0;
+    }
+
+    .services-inner__discription-text {
+        font-family: "Barlow", sans-serif;
+        color: #555555;
+        font-weight: 400;
+        display: inline-block;
+        width: 27.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .link {
+        padding: 1rem 0.8rem;
+        border: 1px solid black;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .link--transparent {
+        background-color: transparent;
+    }
+
+    .services-inner__discription-link  {
+        width: 9.325rem;
+        font-weight: 600;
+        font-family: "Jost Variable", sans-serif;
+        text-align: center;
+    }
+
+
+    .services-inner__discription-link-svg {
+        height: 1.5rem;
+        transform: rotate(45deg);
+        width: 1.5rem;
+    }
+
+    .services-inner__discription-img {
+        height: 4.5rem;
+        width: 4.5rem;
+        opacity: 0.1;
+        align-self: flex-end;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+        height: 400px;
+        width: 150px;
+    }
+
+    .swiper-slide__img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+        
+    }
+
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .swiper-slide__img--centered {
+        position: relative;
+    }
+
+  
+     .swiper-slide__icon-background {
+        width: 95px; !important 
+        height: 74px; !important
+        position: absolute; 
+        top: 1rem; */
+        left: -1rem;
+    }  
+
+    .swiper-slide__text-block {
+        position: absolute;
+        color: white;
+        height: 6.25rem;
+        width: 14rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: auto;
+        bottom: 1.2rem;
+        text-align: left;
+        filter: drop-shadow(4px 9px 29px #000000);
+        }
+
+    .swiper-slide__text-block-big {
+        font-family: "Jost Variable", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    .swiper-slide__text-block-small {
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+    }
+
+    .swiper-slide__img-icon {
+        width: 95px;
+        height: 74px;
+        position: absolute;
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0 86%);
+        top: 1rem;
+        left: 1rem;
+    } 
+
+   
+
+</style>
+
+
+<script>
+import Swiper from 'swiper';
+
+
+
+const swiper = new Swiper(".services-inner__swiper", {
+    slidesPerView: 2.5,
+    initialSlide: 1,
+    centeredSlides: true,
+      spaceBetween: 30,
+      grabCursor: true,
+    });
+
+
+      
+</script>

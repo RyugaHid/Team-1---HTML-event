@@ -1,8 +1,13 @@
 ---
-
+import "swiper/swiper-bundle.css";
 ---
 
 <div class="about" id="about">
+  <img
+    class="about__architecture"
+    src="/assets/Architecture-right.png"
+    alt=""
+  />
   <div class="about__wrapper">
     <div class="about__performance">
       <div class="about__text">
@@ -11,14 +16,45 @@
           <h2 class="about__subtitle">What about our industry Performance.</h2>
         </div>
         <div class="about__experience">
-          <p></p>
+          <p class="about__description">
+            In today's world, we're bombarded with choices. From streaming
+            services to meal kits, it can be overwhelming.
+          </p>
           <div class="about__read">
-            <button class="about__read_button"> Read more </button>
+            <a href="#" class="about__read_button">
+              Read More <img
+                class="about__read_img"
+                src="/assets/up-arrow.png"
+                alt="arrow"
+              />
+            </a>
             <h2>25+ Experience</h2>
           </div>
         </div>
       </div>
-      <div class="about__slider"></div>
+      <div class="swiper about__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/assets/about-slide1.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/about-slide2.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/about-slide3.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/about-slide4.jpg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/about-slide5.jpg" alt="" />
+          </div>
+        </div>
+        <div class="swiper-button-wrapper">
+          <div class="swiper-button-next custom-next"></div>
+          <div class="swiper-button-prev custom-prev"></div>
+        </div>
+      </div>
     </div>
 
     <div class="about__status">
@@ -28,12 +64,24 @@
     </div>
   </div>
 </div>
-
+<script>
+  import Swiper from "swiper";
+  var swiper = new Swiper(".swiper", {
+    slidesPerView: 3,
+    initialSlide: 1,
+    centeredSlides: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 <style>
   .about {
-    margin-top: 140px;
     width: 100%;
-    font-family: Jost, Arial, sans-serif;
+    font-family: "Jost Variable", sans-serif;
+    position: relative;
   }
   .about__wrapper {
     max-width: 1290px;
@@ -43,6 +91,18 @@
   .about__text {
     display: flex;
     gap: 170px;
+  }
+  .about__experience {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .about__architecture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 286px;
+    max-height: 545px;
   }
   .about__title {
     font-weight: 600;
@@ -66,5 +126,81 @@
     font-weight: 600;
     line-height: 62px;
     color: #0e0e0e;
+  }
+  .about__description {
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Barlow", Arial, sans-serif;
+    color: #555555;
+  }
+  .about__read {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .about__read_button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 17px 35px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #fb5b11;
+    text-align: center;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .about__read_img {
+    height: 1.2rem;
+  }
+  .swiper {
+    margin-top: 70px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  /* Общие стили для стрелок */
+  .custom-next,
+  .custom-prev {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .custom-next::after {
+    content: "→";
+    font-size: 35px;
+    color: #0e0e0e;
+    transition: 0.3s ease;
+  }
+
+  .custom-prev::after {
+    content: "←";
+    font-size: 35px;
+    color: #0e0e0e;
+    transition: 0.3s ease;
+  }
+
+  .custom-next:hover::after,
+  .custom-prev:hover::after {
+    color: #fb5b11;
   }
 </style>

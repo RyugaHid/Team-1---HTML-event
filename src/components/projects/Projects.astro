@@ -1,0 +1,378 @@
+---
+import "swiper/css";
+const cases = [
+  {
+    name: "Tower Construction",
+    picName: "case-tower.jpg",
+    tag: "construction",
+  },
+  {
+    name: "Bridge Reconstruction",
+    picName: "case-bridge.jpg",
+    tag: "reconstruction",
+  },
+  { name: "Library Design", picName: "case-library.jpg", tag: "planning" },
+  {
+    name: "Museum Renovation",
+    picName: "case-museum.jpg",
+    tag: "renovation",
+  },
+  {
+    name: "Stadium Expansion",
+    picName: "case-stadium.jpg",
+    tag: "expansion",
+  },
+];
+
+const processSteps = [
+  {
+    name: "Planning and Design",
+    mediaUrl: "design.mp4",
+    description:
+      "This stage involves defining key project parameters, developing architectural and engineering solutions. It includes data collection, site analysis, material selection, and the creation of detailed drawings and cost estimates. This phase lays the groundwork for all subsequent work.",
+  },
+
+  {
+    name: "Permitting and Approvals",
+    mediaUrl: "approvals.mp4",
+    description:
+      "After the design phase, obtaining permits and approvals from regulatory bodies is essential. This includes verifying compliance with building codes and regulations, acquiring construction permits, and other necessary documents to ensure the project is legally sound",
+  },
+
+  {
+    name: "Foundation Construction",
+    mediaUrl: "foundation.mp4",
+    description:
+      "This stage marks the beginning of the actual construction process with the foundation work. It involves site preparation, excavation, formwork installation, and concrete pouring. A well-constructed foundation is crucial for the building’s stability and longevity.",
+  },
+];
+---
+
+<section class="projects">
+  <div class="projects__container">
+    <div class="projects__text-wrapper">
+      <h2 class="projects__title">Our Projects</h2>
+      <h3 class="projects__subtitle">Trusted & Reliable</h3>
+    </div>
+
+    <div class="projects__buttons">
+      <div class="projects__button swiper-button-prev">
+        <svg class="projects__icon">
+          <use href="/dist/svg/sprite.css.svg#projects-arrow-back"></use>
+        </svg>
+      </div>
+      <div class="projects__button swiper-button-next">
+        <svg class="projects__icon">
+          <use href="/dist/svg/sprite.css.svg#projects-arrow-forward"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="projects__slider swiper">
+    <div class="swiper-wrapper">
+      {
+        cases.map((caseItem) => (
+          <div class="swiper-slide">
+            <img
+              class="swiper__img"
+              src={`/assets/${caseItem.picName}`}
+              alt={caseItem.name}
+            />
+            <div class="swiper__text-wrapper">
+              <p class="swiper__tag">{caseItem.tag}</p>
+              <h4 class="swiper__title">{caseItem.name}</h4>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="projects__steps">
+    <div class="projects__container">
+      <h2 class="projects__title">How To Process</h2>
+      <h3 class="projects__subtitle">Steps in the Construction Process</h3>
+      <div class="projects__process process">
+        <ol class="process__list">
+          {
+            processSteps.map((step, i) => (
+              <li
+                class={`process__item ${i === 1 ? "active" : ""}`}
+                id={`step-${i + 1}`}
+              >
+                0{i + 1}. {step.name}
+              </li>
+            ))
+          }
+        </ol>
+        <ol class="process__video-list">
+          {
+            processSteps.map((step, i) => (
+              <li
+                class={`process__video-item ${i === 1 ? "active" : ""}`}
+                id={`video-${i + 1}`}
+              >
+                <video
+                  class="process__video"
+                  src={`/assets/${step.mediaUrl}`}
+                  autoplay="false"
+                />
+                <button
+                  class="process__video-button"
+                  type="button"
+                  aria-label="play"
+                >
+                  <svg class="process__video-icon">
+                    <use href="/dist/svg/sprite.css.svg#play" />
+                  </svg>
+                </button>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    color: #0e0e0e;
+  }
+
+  .projects__steps {
+    background-image: url("/assets/projects-bg.png");
+    background-position: top right;
+    background-size: 286px auto;
+    background-repeat: no-repeat;
+  }
+
+  .projects__container {
+    max-width: 1296px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .projects__steps .projects__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects__title {
+    padding-left: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .projects__title::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: #fb5b11;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .projects__subtitle {
+    font-size: 52px;
+    line-height: 62px;
+    margin-bottom: 67px;
+  }
+
+  .projects__slider {
+    margin-bottom: 140px;
+  }
+
+  .swiper-wrapper {
+    width: 100%;
+    height: 443px;
+  }
+
+  .swiper-slide {
+    display: flex;
+  }
+
+  .swiper__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .projects__buttons {
+    display: flex;
+    gap: 28px;
+    height: fit-content;
+    align-self: center;
+  }
+
+  .projects__icon {
+    width: 48px;
+    height: 12px;
+    transform: 0.3s ease;
+  }
+
+  .projects__button:hover .projects__icon {
+    fill: #fb5b11;
+  }
+
+  .swiper-slide:hover .swiper__text-wrapper {
+    opacity: 1;
+  }
+
+  .swiper__text-wrapper {
+    opacity: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    transition: 0.3s ease;
+  }
+
+  .swiper__tag {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    padding: 5px 16px;
+    background-color: #fb5b11;
+    color: #fff;
+    width: fit-content;
+  }
+
+  .swiper__title {
+    font-size: 32px;
+    line-height: 42px;
+    padding: 16px 24px;
+    background-color: #0e0e0e;
+    color: #fff;
+  }
+
+  .swiper__button {
+    background-color: #fb5b11;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 11px solid rgba(14, 14, 14, 0.3);
+  }
+
+  .process__list {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 10px;
+    margin-bottom: 80px;
+  }
+
+  .process__item {
+    width: 416px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(85, 85, 85, 0.2);
+    padding: 23px 10px;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+  }
+
+  .process__item:hover {
+    color: #fb5b11;
+  }
+
+  .process__item.active {
+    position: relative;
+    background-color: #fb5b11;
+    color: #fff;
+  }
+
+  .process__item.active::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #fb5b11;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+
+  .process__video-item {
+    position: relative;
+    display: none;
+  }
+
+  .process__video {
+    width: 100%;
+  }
+
+  .process__video-item.active {
+    display: block;
+  }
+
+  .process__video-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fb5b11;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+  }
+
+  .process__video-icon {
+    width: 21px;
+    height: 31px;
+  }
+</style>
+
+<script>
+  // @ts-nocheck
+  import Swiper from "swiper";
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    autoplay: true,
+
+    slidesPerView: 3,
+    spaceBetween: 24,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const videoNodes = document.querySelectorAll(".process__video-item");
+  const stepsNodes = document.querySelectorAll(".process__item");
+  stepsNodes.forEach((step) => {
+    step.addEventListener("click", () => {
+      stepsNodes.forEach((step) => step.classList.remove("active"));
+      step.classList.add("active");
+      const id = step.getAttribute("id").split("-").at(-1);
+      videoNodes.forEach((video) => video.classList.remove("active"));
+      const videoNode = document.querySelector(`#video-${id}`);
+      videoNode.classList.add("active");
+    });
+  });
+</script>

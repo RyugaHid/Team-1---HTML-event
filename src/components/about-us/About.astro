@@ -2,22 +2,69 @@
 
 ---
 
-<div class="about">
+<div class="about" id="about">
   <div class="about__wrapper">
-    <div class="about__text">
-      <div class="about__industry"></div>
-      <div class="about__experience"></div>
+    <div class="about__performance">
+      <div class="about__text">
+        <div class="about__industry">
+          <p class="about__title">About Us</p>
+          <h2 class="about__subtitle">What about our industry Performance.</h2>
+        </div>
+        <div class="about__experience">
+          <p></p>
+          <div class="about__read">
+            <button class="about__read_button"> Read more </button>
+            <h2>25+ Experience</h2>
+          </div>
+        </div>
+      </div>
+      <div class="about__slider"></div>
     </div>
-    <div class="about__slider"></div>
+
+    <div class="about__status">
+      <p></p>
+      <h2></h2>
+      <div class="about__trusted"></div>
+    </div>
   </div>
 </div>
 
 <style>
   .about {
+    margin-top: 140px;
     width: 100%;
+    font-family: Jost, Arial, sans-serif;
   }
   .about__wrapper {
     max-width: 1290px;
     width: 1290px;
+    margin: auto;
+  }
+  .about__text {
+    display: flex;
+    gap: 170px;
+  }
+  .about__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+    padding-left: 25px;
+    color: #0e0e0e;
+  }
+  .about__title::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background-color: #fb5b11;
+  }
+  .about__subtitle {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 62px;
+    color: #0e0e0e;
   }
 </style>

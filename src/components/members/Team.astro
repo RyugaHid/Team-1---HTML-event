@@ -3,37 +3,230 @@
 ---
 
 <div class="team-block" id="team">
-    <div class="team-inner">
-        <div class="team-inner__discription">
-            <div class="team-inner_discription-anchor anchor">
-                <span class="anchor__line-span">—</span>
-                <span class="anchor__text-span">Our Team Members</span>
-            </div>
-            <h2 class="team-inner__discription-h2">Our Dedicated Team Members..</h2>
-            <span class="team-inner__discription-text">In today's world, we're bombarded with choices. From streaming services to meal kits, it can be overwhelming to find the best option.</span>
-            <a class="team-inner__discription-link link link--transparent">See All Member <svg class="team-inner__discription-link-svg">
-                <use href="/dist/svg/sprite.css.svg#narrow-up"></use>
-              </svg>
-            </a>
-        </div>
+  <div class="team-inner">
+    <div class="team-inner__discription">
+      <div class="team-inner_discription-anchor anchor">
+        <span class="anchor__line-span">—</span>
+        <span class="anchor__text-span">Our Team Members</span>
+      </div>
+      <h2 class="team-inner__discription-h2">Our Dedicated Team Members..</h2>
+      <span class="team-inner__discription-text"
+        >In today's world, we're bombarded with choices. From streaming services
+        to meal kits, it can be overwhelming to find the best option.</span
+      >
+      <a class="team-inner__discription-link link link--transparent"
+        >See All Member <svg class="team-inner__discription-link-svg">
+          <use href="/dist/svg/sprite.css.svg#narrow-up"></use>
+        </svg>
+      </a>
     </div>
-    <img src="" alt="selected member" class="team-inner__current-member-img">
+
+    <img src="assets/firstguy.jpg" alt="selected member" id="current-member" class="team-inner__current-member-img" />
     <div class="team-inner__member-selector">
-        <div class="team-inner__member">
-            <div class="team-inner__member-name">Wade Warren</div>
-            <div class="team-inner__member-position">Architect</div>
-        </div>
-        <div class="team-inner__member">
-            <div class="team-inner__member-name">Brooklyn Simmons</div>
-            <div class="team-inner__member-position">Architect Designer</div>
-        </div>
-        <div class="team-inner__member">
-            <div class="team-inner__member-name">Jonson Duoing</div>
-            <div class="team-inner__member-position">Architect</div>
-        </div>
-        <div class="team-inner__member">
-            <div class="team-inner__member-name">Esther Howard</div>
-            <div class="team-inner__member-position">Architect</div>
-        </div>
+      <div class="team-inner__member" id="firstMember">
+        <div class="team-inner__member-name" id="firstName">Wade Warren</div>
+        <div class="team-inner__member-position">Architect</div>
+      </div>
+      <div class="team-inner__member" id="secondMember">
+        <div class="team-inner__member-name team-inner_member-name--active" id="secondName">Brooklyn Simmons</div>
+        <div class="team-inner__member-position">Architect Designer</div>
+      </div>
+      <div class="team-inner__member" id="thirdMember">
+        <div class="team-inner__member-name" id="thirdName">Jonson Duoing</div>
+        <div class="team-inner__member-position">Architect</div>
+      </div>
+      <div class="team-inner__member" id="fourthMember">
+        <div class="team-inner__member-name" id="fourthName">Esther Howard</div>
+        <div class="team-inner__member-position">Architect</div>
+      </div>
     </div>
+    <img class="team-inner__img" src="assets/scheme.png" alt="scheme">
+  </div>
 </div>
+
+<style>
+  .team-block {
+    width: 100%;
+    height: 53rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-inner {
+    width: 81rem;
+    margin: auto;
+    display: flex;
+    gap: 6rem;
+  }
+
+  .team-inner__discription {
+    display: flex;
+    flex-direction: column;
+    width: 32.5rem;
+  }
+
+  .anchor__line-span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fb5b11;
+    margin-right: 0.6rem;
+  }
+
+  .anchor__text-span {
+    font-family: "Jost Variable", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .team-inner__discription-h2 {
+    font-weight: 600;
+    font-size: 3.25rem;
+    width: 26rem;
+    font-family: "Jost Variable", sans-serif;
+    margin: 1rem 0;
+  }
+
+  .team-inner__discription-text {
+    font-family: "Barlow", sans-serif;
+    color: #555555;
+    font-weight: 400;
+    display: inline-block;
+    width: 27.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .link {
+    padding: 1rem 0.8rem;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link--transparent {
+    background-color: transparent;
+  }
+
+  .team-inner__discription-link {
+    width: 9.325rem;
+    font-weight: 600;
+    font-family: "Jost Variable", sans-serif;
+    text-align: center;
+  }
+
+  .team-inner__discription-link-svg {
+    height: 1.5rem;
+    transform: rotate(45deg);
+    width: 1.5rem;
+  }
+
+  .team-inner__discription-img {
+    height: 4.5rem;
+    width: 4.5rem;
+    opacity: 0.1;
+    align-self: flex-end;
+  }
+
+  .team-inner__current-member-img {
+    height: 480px;
+    width: 416px;
+    object-fit: cover;
+  }
+
+  .team-inner__member-selector {
+    width: 16.875rem;
+    height: 24.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+
+  .team-inner__member {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+  }
+
+  .team-inner__member-name {
+    font-family: 'Jost Variable', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: right;
+  }
+
+  .team-inner_member-name--active {
+    font-size: 2rem;
+    text-decoration: underline;
+    color: #FF6600;
+  }
+
+  .team-inner__member-position {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #555555;
+    text-align: right;
+  }
+
+  .team-inner__img  {
+    position: relative;
+    bottom: 9rem;
+    right: 4rem;
+  }
+</style>
+
+<script>
+
+
+// @ts-nocheck
+const firstMember = document.getElementById('firstMember');
+const secondMember = document.getElementById('secondMember');
+const thirdMember = document.getElementById('thirdMember');
+const fourthMember = document.getElementById('fourthMember');
+const firstName = document.getElementById('firstName');
+const secondName = document.getElementById('secondName');
+const thirdName = document.getElementById('thirdName');
+const fourthName = document.getElementById('fourthName');
+const img = document.getElementById('current-member');
+
+firstName.addEventListener('mouseover', () => {
+    firstName.classList.add('team-inner_member-name--active');
+    secondName.classList.remove('team-inner_member-name--active');
+    thirdName.classList.remove('team-inner_member-name--active');
+    fourthName.classList.remove('team-inner_member-name--active');
+    img.src  = 'assets/firstguy.jpg';
+});
+
+secondMember.addEventListener('mouseover', () => {
+    firstName.classList.remove('team-inner_member-name--active');
+    secondName.classList.add('team-inner_member-name--active');
+    thirdName.classList.remove('team-inner_member-name--active');
+    fourthName.classList.remove('team-inner_member-name--active');
+    img.src = 'assets/secondguy.jpg';
+})
+
+thirdMember.addEventListener('mouseover', () => {
+    firstName.classList.remove('team-inner_member-name--active');
+    secondName.classList.remove('team-inner_member-name--active');
+    thirdName.classList.add('team-inner_member-name--active');
+    fourthName.classList.remove('team-inner_member-name--active');
+    img.src = 'assets/thirdguy.jpg';
+});
+
+fourthMember.addEventListener('mouseover', () => {
+    firstName.classList.remove('team-inner_member-name--active');
+    secondName.classList.remove('team-inner_member-name--active');
+    thirdName.classList.remove('team-inner_member-name--active');
+    fourthName.classList.add('team-inner_member-name--active');
+    img.src = 'assets/fourthguy.jpg';
+})
+
+</script>

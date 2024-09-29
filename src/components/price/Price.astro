@@ -1,0 +1,256 @@
+<section class="price" id="#price">
+    <div class="price__container">
+    <div class="price__subtitle">Our Price table</div>
+    <h2 class="price__title">Solutions For Price table</h2>
+    </div>
+    <div class="price__wrapper">
+    <div class="card card__price">
+    <div class="triangle"></div>
+        <span class="card__cost">$19.99 <span>/M</span></span>
+        <div class="card__tarif">
+            <img class="star" src="/assets/star.png" alt="">
+            <span class="card__tarif-text">Basic</span>
+        </div>
+        <ul class="card__privilege">
+        <li>24/7 Free Hotline Service</li>
+        <li>Chat Support</li>
+        <li>5 Months After Delivery Support</li>
+        <li>Support with 8 Engineers</li>
+        <li class="card__privilege__grey">Team Management</li>
+        <li class="card__privilege__grey">Free Digital Marketing & Analysis</li>
+        </ul>
+        <button class="btn btn--price">
+            <a class="card__trial" href="#">Start Free Trial</a>
+            <img class="arrow" src="/assets/arrowBlack.png" alt="" >
+        </button>
+    </div>
+
+    <div class="card card__price">
+    <div class="triangle"></div>
+    <div class="special">Special</div>
+        <span class="card__cost">$29.99 <span>/M</span></span>
+        <div class="card__tarif">
+            <img class="star" src="/assets/star.png" alt="">
+            <span class="card__tarif-text">Standard</span>
+        </div>
+        <ul class="card__privilege">
+        <li>24/7 Free Hotline Service</li>
+        <li>Chat Support</li>
+        <li>5 Months After Delivery Support</li>
+        <li>Support with 8 Engineers</li>
+        <li>Team Management</li>
+        <li>Free Digital Marketing & Analysis</li>
+        </ul>
+        <button class="btn btn--price">
+            <a class="card__trial" href="#">Start Free Trial</a>
+            <img class="arrow" src="/assets/arrowBlack.png" alt="" >
+        </button>
+    </div>
+
+    <div class="card card__price">
+    <div class="triangle"></div>
+        <span class="card__cost">$39.99 <span>/M</span></span>
+        <div class="card__tarif">
+            <img class="star" src="/assets/star.png" alt="">
+            <span class="card__tarif-text">Premium</span>
+        </div>
+        <ul class="card__privilege">
+        <li>24/7 Free Hotline Service</li>
+        <li>Chat Support</li>
+        <li>5 Months After Delivery Support</li>
+        <li>Support with 8 Engineers</li>
+        <li>Team Management</li>
+        <li class="card__privilege__grey">Free Digital Marketing & Analysis</li>
+        </ul>
+        <button class="btn btn--price">
+            <a class="card__trial" href="#">Start Free Trial</a>
+            <img class="arrow" src="/assets/arrowBlack.png" alt="" >
+        </button>
+    </div>
+
+    
+
+    
+    </div>
+
+</section>
+
+
+<style>
+.price{
+    max-width: 100%;
+    background-image: url('/assets/priceBG.png');
+    background-position: top left; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.price__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 143px;
+}
+.price__subtitle {
+    position: relative;
+    font-family: "Jost Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+.price__subtitle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px; 
+    width: 15px;
+    height: 2px;
+    background-color: #FB5B11;
+    transform: translateY(-50%);
+}
+
+.price__title {
+    margin: 0;
+    font-family: "Jost Variable", sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.price__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.card__price{
+margin-right: 24px;
+}
+
+.card{
+    position: relative;
+    padding: 44px 50px;
+    border: 1px solid rgb(216, 216, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: left;
+    background-color: #fff;
+}
+
+.card:hover .triangle{
+    border-top: 60px solid #FB5B11; 
+}
+
+.card:hover .btn--price{
+    border: none;
+    background-color: #FB5B11;
+}
+.card:hover .arrow{
+    display: none;
+}
+
+.card:hover .card__trial{
+    color: #fff;
+}
+
+.triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 0;
+	height: 0;
+	border-top: 60px solid rgb(0, 0, 0); 
+	border-right: 60px solid transparent;			
+}
+
+.card__cost{
+    font-family: "Jost Variable", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.card__cost span{
+    font-size: 25px;
+   color: rgb(177, 175, 175); 
+}
+
+.card__tarif{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    padding-bottom: 27px;
+
+}
+
+.card__tarif-text{
+    font-family: "Jost Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 14px;
+}
+.star{
+    width: 16px;
+    height: 16px;
+}
+
+.card__privilege{
+    font-family: "Jost Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px; 
+    margin-bottom: 36px;
+}
+
+.card__privilege__grey{
+    color: rgb(177, 175, 175); 
+}
+
+.arrow{
+    width: 15px;
+    height: 15px;
+    padding-left: 10px;
+  }
+ 
+  .btn--price{
+    border: 2px solid #0E0E0E;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    transition: 0.6s;
+  }
+
+
+  .card__trial{
+    text-decoration:none;
+    color: #0E0E0E;
+    font-family: "Jost Variable", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .special {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(57, 202, 110);
+    padding: 5px 24px;
+    border-radius: 10px;
+    font-family: "Barlow", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    }
+
+</style>
+
+
+

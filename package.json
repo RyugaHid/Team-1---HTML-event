@@ -8,7 +8,7 @@
     "minify-images": "imagemin public/assets/*.{jpg,jpeg,png} --out-dir=dist/components",
     "start": "npm run build-sprite && npm run minify-images && astro dev",
     "deploy": "gh-pages -d dist",
-    "build": "astro build",
+    "build": "npm run build-sprite && npm run minify-images && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

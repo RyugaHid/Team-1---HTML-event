@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build-sprite": "svg-sprite -s --symbol-dest dist public/assets/icons/*.svg",
+    "build-sprite": "svg-sprite -s --symbol-dest public public/assets/icons/*.svg",
     "minify-images": "imagemin public/assets/*.{jpg,jpeg,png} --out-dir=dist/components",
     "start": "npm run build-sprite && npm run minify-images && astro dev",
     "deploy": "gh-pages -d dist",
